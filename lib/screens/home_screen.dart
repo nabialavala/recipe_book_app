@@ -9,9 +9,11 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Nabia's Cookbook"),
       ),
       body: ListView.builder(
+        padding: EdgeInsets.zero, //makes the list touch the bottom
         itemCount: recipes.length,
         itemBuilder: (context, index) {
           final recipe = recipes[index];
