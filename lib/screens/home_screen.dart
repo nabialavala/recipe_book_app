@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_book_app/data/recipes_data.dart';
+import 'package:recipe_book_app/main.dart';
 import 'package:recipe_book_app/screens/details_screen.dart';
 
 class HomeScreen extends StatelessWidget{
@@ -18,8 +19,17 @@ class HomeScreen extends StatelessWidget{
         itemBuilder: (context, index) {
           final recipe = recipes[index];
           return Card(
+            //adding soft shadows and rounded borders
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            color: cream,
             child: ListTile(
               leading: Image.asset(recipe.imagePath, width: 56, fit: BoxFit.cover),
+              textColor: brown,
+              tileColor: cream,
+              iconColor: lightPink,
               title:   Text(recipe.name),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
